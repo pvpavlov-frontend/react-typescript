@@ -1,0 +1,21 @@
+.counsultation20-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 10px;
+  gap: 5px;
+}
+
+.car-description-name {
+  font-size: 26px;
+}
+
+.car-items {
+  font-size: 18px;
+  color: blue;
+}
+
+.car-stores-items {
+  font-size: 16px;
+  color: red;
+}
