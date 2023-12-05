@@ -17,4 +17,10 @@ export const InputComponent = styled.input`
   height: 50px;
   padding: 20px;
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "default")};
+  border: none;
+  border-bottom: 2px solid grey;
+  &:focus-visible,
+  &:focus {
+    outline: none;
+  }
 `;

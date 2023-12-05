@@ -31,4 +31,5 @@ export const LoginFormName = styled.p`
   color: rgb(123, 54, 247);
   font-size: 18px;
   font-weight: bold;
+  text-align: center;
 `;
