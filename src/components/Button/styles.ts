@@ -6,15 +6,16 @@ interface ButtonComponetProps {
 
 export const ButtonComponent = styled.button<ButtonComponetProps>`
   width: 100%;
-  min-height: 50px;
-  height: fit-content;
   margin: 0;
-  padding: 4px;
+  padding: 10px;
   outline: none;
   cursor: pointer;
-  /* background-color: ${(props) => (props.disabled ? "grey" : "blue")}; */
-  background-color: ${({ disabled }) => (disabled ? "grey" : "blue")};
-  color: ${({ $isRedFont }) => ($isRedFont ? "red" : "white")};
-  font-size: 14px;
-  font-weight: bold;
+  background: ${({ disabled }) => (disabled ? "grey" : "#298296")};
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #fff;
+  border: none;
 `;

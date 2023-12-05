@@ -11,7 +11,8 @@ import GlobalStyles from "styles/GlobalStyles";
 //Homeworks
 // import Homework20 from "./homeworks/Homework20";
 // import Homework21 from "./homeworks/Homework21";
-import Homework22 from "homeworks/Homework22";
+// import Homework22 from "homeworks/Homework22";
+import Homework23 from "homeworks/Homework23";
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
       {/* Homeworks */}
       {/* <Homework20 /> */}
       {/* <Homework21 /> */}
-      <Homework22 />
+      <Homework23 />
     </>
   );
 }

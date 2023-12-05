@@ -3,5 +3,5 @@ interface Colors {
 }
 
 export const colors: Colors = {
-  primary: "rgb(26, 35, 53)",
+  primary: "#101010",
 };
