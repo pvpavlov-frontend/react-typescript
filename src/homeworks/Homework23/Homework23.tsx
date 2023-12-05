@@ -1,5 +1,5 @@
 import { UserData } from "./types";
-import React, { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent } from "react";
 import Input from "components/Input";
 import Button from "components/Button";
 
@@ -81,7 +81,7 @@ const Homework23 = () => {
             Фамилия:
           </InputLabel>
           <LoginFormSpan>
-            {userInfo.nameValue}
+            {userInfo.surnameValue}
           </LoginFormSpan>
 
           <InputLabel>
