@@ -1,26 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { Card, Button, Paragraph, H2, WrapperCard, Homework24Wrapper } from './styles';
+import { useState, useEffect } from 'react';
+import { Card, Button, Paragraph, H2, WrapperCard, Homework24Wrapper, ParagraphSpan } from './styles';
 import { JokeInfo } from './types';
 
-
-
-const Homework24 = () => {
-    const [joke, setJoke] = useState<JokeInfo>({
-        type: "",
-        setup: "",
-        punchline: "",
-        id: "",
-    });
+function Homework24() {
+    const [joke, setJoke] = useState<JokeInfo>({ type: "", setup: "", punchline: "", id: "" });
     const [error, setError] = useState<string | undefined>(undefined);
-
-    useEffect(() => {
-        fetchData();
-    }, []);
-
     const fetchData = () => {
         fetch('https://official-joke-api.appspot.com/random_joke')
             .then(response => {
-
                 if (!response.ok) {
                     throw new Error('Error while receiving data');
                 }
@@ -32,44 +19,42 @@ const Homework24 = () => {
             .catch(error => {
                 setError('Error while receiving data');
             });
-    };
-
-    const handleButtonClick = () => {
-        fetchData();
-    };
-
-    useEffect(() => {
         if (joke) {
-            console.log('You got a new joke');
+            alert('You got a new joke');
         } else if (error) {
             alert('Error while receiving data');
         }
-    }, [joke, error]);
+    };
+    const handleButtonClick = () => { fetchData(); };
+
+    useEffect(() => {
+        fetchData();
+    }, []);
 
     return (
         <Homework24Wrapper>
             <WrapperCard>
                 <Card>
                     {joke ? (
-                        <div>
+                        <>
                             <Paragraph>
-                                <span style={{ color: 'red', fontSize: "18px" }}>ID:</span>
+                                <ParagraphSpan>ID:</ParagraphSpan>
                                 {joke.id}
                             </Paragraph>
-                            <H2 style={{ color: 'blue', lineHeight: "1em", marginBottom: "20px" }}>
-                                <span style={{ color: 'red', fontSize: "18px" }}>type: </span>
+                            <H2>
+                                <ParagraphSpan>type: </ParagraphSpan>
                                 {joke.type}
                             </H2>
                             <Paragraph>
-                                <span style={{ color: 'red', fontSize: "18px" }}>setup: </span>
+                                <ParagraphSpan>setup: </ParagraphSpan>
                                 {joke.setup}</Paragraph>
                             <Paragraph>
-                                <span style={{ color: 'red', fontSize: "18px" }}>punchline: </span>
+                                <ParagraphSpan>punchline: </ParagraphSpan>
                                 {joke.punchline}
                             </Paragraph>
-                        </div>
+                        </>
                     ) : (
-                        <p>{error}</p>
+                        <Paragraph>{error}</Paragraph>
                     )}
                 </Card>
                 <Button onClick={handleButtonClick}>Get a new joke</Button>

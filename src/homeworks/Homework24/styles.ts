@@ -26,15 +26,23 @@ export const Button = styled.button`
   border-radius: 5px;
   cursor: pointer;
 `;
+
 export const Paragraph = styled.p`
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 18px;
     
 `;
+export const ParagraphSpan = styled.span`
+    color: red; 
+    font-size: 18px; 
+    
+`;
 export const H2 = styled.h2`
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 24px;
-
+    color: blue; 
+    line-height: 1em; 
+    margin-bottom: 20px; 
 `;
 
 export const WrapperCard = styled.div`
