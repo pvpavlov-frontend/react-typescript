@@ -3,7 +3,7 @@ import {ChangeEventHandler} from 'react';
 export interface InputProps {
   placeholder?: string;
   disabled?: boolean;
-  name: string;
+  name?: string;
   labelName: string;
   value?: string;
   onChange?: ChangeEventHandler<HTMLInputElement> | undefined;
