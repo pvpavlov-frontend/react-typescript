@@ -14,6 +14,7 @@ function Input({
   labelName,
   value,
   onChange,
+  onBlur,
   type,
   // Получаею пропсу error от родительского компонента и присваиваю ей default значение undefined
   error = undefined,
@@ -28,6 +29,7 @@ function Input({
         type={type}
         value={value}
         onChange={onChange}
+        onBlur={onBlur}
         id={inputId}
         name={name}
         disabled={disabled}
