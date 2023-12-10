@@ -5,6 +5,8 @@ import Layout from "components/Layout";
 import Home from "pages/Home";
 import About from "pages/About";
 import Users from "pages/Users";
+import Clients from "pages/Clients";
+import Company from "pages/Company";
 // Lessons
 // import Lesson20 from "./lessons/Lesson20";
 // import Lesson21 from "./lessons/Lesson21";
@@ -33,6 +35,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/users" element={<Users />} />
           <Route path="/about" element={<About />} />
+          <Route path="/clients" element={<Clients />} />
+
+          <Route path="/clients/:companyName" element={<Company />} />
           <Route path="*" element="Page Not Found" />
         </Routes>
         {/* Lessons */}

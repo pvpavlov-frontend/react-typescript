@@ -29,9 +29,23 @@ export const NavContainer = styled.nav`
   font-size: 20px;
   color: ${colors.white};
 `;
+export const NavFooter = styled.nav`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 14px;
+  color: ${colors.white};
+  & > a {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 8px;
+    &.active {
+      color: red;
+    }
+  }
+`;
 
 export const StyledLink = styled(NavLink)`
-  font-size: 20px;
   color: ${colors.white};
 `;
 
@@ -45,8 +59,8 @@ export const Main = styled.main`
 
 export const Footer = styled.footer`
   display: flex;
+  justify-content: center;
   width: 100%;
-  height: 100px;
   padding: 20px;
   background-color: ${colors.primary};
   color: ${colors.white};
