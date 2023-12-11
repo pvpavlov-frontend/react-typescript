@@ -1,4 +1,6 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+
+import {LikeIcon} from 'assets';
 
 import {
   LayoutWrapper,
@@ -7,40 +9,61 @@ import {
   Main,
   NavContainer,
   StyledLink,
+  StyledNavLink,
+  NavContainerCol,
+  LogoContainer,
+  LogoImg
 } from "./styles";
 import { LayoutProps } from "./types";
 
 function Layout({ children }: LayoutProps) {
   const location = useLocation();
+  const navigate = useNavigate();
 
   console.log(location);
   return (
     <LayoutWrapper>
       <Header>
-        Logo
+        <LogoContainer onClick={() => navigate("/")}>
+          <LogoImg src={LikeIcon} />
+          {/* Logo */}
+          </LogoContainer>
         <NavContainer>
-          <StyledLink
+          <StyledNavLink
             style={({ isActive }) => ({ color: isActive ? "blue" : "white" })}
             to="/"
           >
             Home
-          </StyledLink>
-          <StyledLink
+          </StyledNavLink>
+          <StyledNavLink
             style={({ isActive }) => ({ color: isActive ? "blue" : "white" })}
             to="/users"
           >
             Users
-          </StyledLink>
-          <StyledLink
+          </StyledNavLink>
+          <StyledNavLink
             style={({ isActive }) => ({ color: isActive ? "blue" : "white" })}
             to="/about"
           >
             About
-          </StyledLink>
+          </StyledNavLink>
+          <StyledNavLink
+            to={"/clients"}
+            style={({ isActive }) => ({ color: isActive ? "blue" : "white" })}
+          >
+            Clients
+          </StyledNavLink>
         </NavContainer>
       </Header>
       <Main>{children}</Main>
-      <Footer>Footer</Footer>
+      <Footer>
+        <NavContainerCol>
+          <StyledLink to={"/"}>Home</StyledLink>
+          <StyledLink to={"/users"}>Users</StyledLink>
+          <StyledLink to={"/about"}>About</StyledLink>
+          <StyledLink to={"/clients"}>Clients</StyledLink>
+        </NavContainerCol>
+      </Footer>
     </LayoutWrapper>
   );
 }
