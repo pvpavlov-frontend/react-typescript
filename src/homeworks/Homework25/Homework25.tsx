@@ -63,7 +63,7 @@ function Homework25() {
       productPrice: "",
       productDescription: "",
       termsOfUse: false,
-    } as FormValues,
+    },
     validationSchema,
     onSubmit: (values) => {
       console.log("submit");
@@ -76,11 +76,48 @@ function Homework25() {
     },
   });
 
+  // По вашей просьбе - показываю как динамически можно создавать Input
+  // Создаем обьект для map инпутов, ключом будет являться name инпутов, а значением labelName
+
+  const inputsInfo = {
+    productName: {
+      labelName: "Название товара*",
+      placeholder: "Введите название товара",
+    },
+    productPrice: {
+      labelName: "Цена товара*",
+      placeholder: "Введите цену товара",
+    },
+  };
+
+  // Далее делаем map ключец обьекта и возвращаем созданные при мэпе Input
+  // этот способ более трудозатратный, однако он очень хороший, когда у нас много однотипных инпутов
+  // Например 10 инпутов, почти с идентичной логикой и пропсами
+  //keyof typeof - это TypeScript-оператор, который используется для извлечения типа ключей из объекта или типа
+  const inputs = Object.keys(inputsInfo).map((inputName) => {
+    return (
+      <Input
+        // Получаем доступ к labelName сначала из productName, затем productPrice у обьекта inputsInfo
+        labelName={inputsInfo[inputName as keyof typeof inputsInfo].labelName}
+        // Получаем доступ к placeholder сначала из productName, затем productPrice у обьекта inputsInfo
+        placeholder={
+          inputsInfo[inputName as keyof typeof inputsInfo].placeholder
+        }
+        name={inputName}
+        // Получаем value для каждого компонента Input, через inputName
+        value={formik.values[inputName as keyof typeof inputsInfo]}
+        onChange={formik.handleChange}
+        // Получаем error для каждого компонента Input, через inputName
+        error={formik.errors[inputName as keyof typeof inputsInfo]}
+      />
+    );
+  });
+
   return (
     <Homework25Wrapper>
       <ShopForm onSubmit={formik.handleSubmit}>
         <Text>Создание товара</Text>
-        <Input
+        {/* <Input
           labelName="Название товара*"
           placeholder="Введите название товара"
           name="productName"
@@ -95,7 +132,8 @@ function Homework25() {
           value={formik.values.productPrice}
           onChange={formik.handleChange}
           error={formik.errors.productPrice}
-        />
+        /> */}
+        {inputs}
         <p>Описание товара</p>
         <textarea
           placeholder="Введите описание товара"

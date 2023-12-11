@@ -22,6 +22,15 @@ export const Header = styled.header`
   color: ${colors.white};
 `;
 
+export const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+`;
+
 export const NavContainer = styled.nav`
   display: flex;
   gap: 20px;
@@ -30,9 +39,21 @@ export const NavContainer = styled.nav`
   color: ${colors.white};
 `;
 
-export const StyledLink = styled(NavLink)`
+export const NavContainerCol = styled.nav`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+`;
+
+export const StyledNavLink = styled(NavLink)`
   font-size: 20px;
   color: ${colors.white};
+`;
+
+export const StyledLink = styled(Link)`
+  color: white;
+  font-size: 16px;
 `;
 
 export const Main = styled.main`
@@ -46,8 +67,13 @@ export const Main = styled.main`
 export const Footer = styled.footer`
   display: flex;
   width: 100%;
-  height: 100px;
+  height: 150px;
   padding: 20px;
   background-color: ${colors.primary};
   color: ${colors.white};
+`;
+
+export const LogoImg = styled.img`
+  width: 100%;
+  height: 100%;
 `;
