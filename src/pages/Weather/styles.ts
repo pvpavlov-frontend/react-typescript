@@ -28,7 +28,10 @@ export const Header = styled.header`
     align-items: center;
     justify-content: center;
     border-bottom: 1px solid #D2D2D2;
-    background:linear-gradient(0deg, rgba(255, 255, 255, 0.10) 0 %, rgba(255, 255, 255, 0.10) 100 %), rgba(18, 45, 77, 0.50);
+    background:linear-gradient(
+        0deg, rgba(255, 255, 255, 0.10) 0%, 
+        rgba(255, 255, 255, 0.10) 100%), 
+        rgba(18, 45, 77, 0.50);
      backdrop-filter: blur(8.899999618530273px);
     & h1 {
         color: #FFF;
@@ -44,7 +47,7 @@ export const Main = styled.div`
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    text-align: center;
+    /* text-align: center; */
     padding-top: 118px;
     @media only screen and (max-width: 767px) {
         padding: 50px 15px 0;
@@ -117,6 +120,7 @@ export const InfoFlex = styled.div`
     justify-content: flex-start;
 `;
 export const InfoItem = styled.div`
+    width: 50%;
     &:nth-child(2) {
         flex: 1 0 0;
     }
