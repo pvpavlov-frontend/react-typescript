@@ -1,10 +1,11 @@
-import React, { useState, createContext, useContext } from 'react';
+import React, { useState, createContext } from 'react';
 import Card from 'homeworks/Homework27/components/Card/Card';
+import { BlogManagementWrapper } from './styles';
 
 // Создаем контекст
 const BlogContext = createContext<any>(null);
 
-const BlogManagement: React.FC = () => {
+function BlogManagement(){
   // Состояния для хранения текста и данных для карточки
   const [postText, setPostText] = useState<string>('');
   const [postData, setPostData] = useState<any>(null);
@@ -16,7 +17,7 @@ const BlogManagement: React.FC = () => {
 
   return (
     <BlogContext.Provider value={{ postText, setPostText, postData, handlePost }}>
-      <div>
+      <BlogManagementWrapper>
         <textarea
           placeholder="Введите ваш пост..."
           value={postText}
@@ -24,7 +25,7 @@ const BlogManagement: React.FC = () => {
         />
         <button onClick={handlePost}>Запостить</button>
         {postData && <Card />}
-      </div>
+      </BlogManagementWrapper>
     </BlogContext.Provider>
   );
 };

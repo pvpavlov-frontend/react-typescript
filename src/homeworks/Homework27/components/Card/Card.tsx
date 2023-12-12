@@ -1,18 +1,19 @@
 import React from 'react';
 import Message from 'homeworks/Homework27/components/Message/Message';
 import { BlogContext } from 'homeworks/Homework27/components/BlogManagement/BlogManagement';
+import { CardWrapper } from './styles';
 
-const Card: React.FC = () => {
+function Card() {
   // Получаем данные из контекста
   const { postData } = React.useContext(BlogContext);
 
   return (
-    <div>
+    <CardWrapper>
       <div>
         <p>{`${postData.name} ${postData.surname}`}</p>
       </div>
       <Message />
-    </div>
+    </CardWrapper>
   );
 };
 

@@ -1,9 +1,9 @@
-import React from 'react';
+import { useContext } from 'react';
 import { BlogContext } from 'homeworks/Homework27/components/BlogManagement/BlogManagement';
 
-const Message: React.FC = () => {
+function Message() {
   // Получаем данные из контекста
-  const { postData } = React.useContext(BlogContext);
+  const { postData } = useContext(BlogContext);
 
   return (
     <div>

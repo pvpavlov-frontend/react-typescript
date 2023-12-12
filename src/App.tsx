@@ -7,6 +7,7 @@ import About from "pages/About";
 import Users from "pages/Users";
 import Clients from "pages/Clients";
 import { Apple, Facebook, Sega } from "pages/Clients/modules";
+import Weather from "pages/Weather";
 // Lessons
 // import Lesson20 from "./lessons/Lesson20";
 // import Lesson21 from "./lessons/Lesson21";
@@ -32,9 +33,10 @@ function App() {
   return (
     <BrowserRouter>
       <GlobalStyles />
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Homework27 />} />
+      <Weather />
+      {/* <Layout> */}
+      {/* <Routes>
+          <Route path="/" element={<Weather />} />
           <Route path="/users" element={<Users />} />
           <Route path="/about" element={<About />} />
           <Route path="/clients" element={<Clients />} />
@@ -42,25 +44,25 @@ function App() {
           <Route path="/clients/facebook" element={<Facebook />} />
           <Route path="/clients/sega" element={<Sega />} />
           <Route path="*" element="Page Not Found" />
-        </Routes>
-        {/* Lessons */}
-        {/* <Lesson20 /> */}
-        {/* <Lesson21 /> */}
-        {/* <Lesson22 /> */}
-        {/* <Lesson24 /> */}
-        {/* <Lesson25 /> */}
-        {/* Consultations */}
-        {/* <Counsultation20 /> */}
-        {/* Homeworks */}
-        {/* <Homework20 /> */}
-        {/* <Homework21 /> */}
-        {/* <Homework22 /> */}
-        {/* <Homework23 /> */}
-        {/* <Homework24 /> */}
-        {/* <Homework24Alternative /> */}
-        {/* <Homework25 /> */}
-        {/* <Homework27 /> */}
-      </Layout>
+        </Routes> */}
+      {/* Lessons */}
+      {/* <Lesson20 /> */}
+      {/* <Lesson21 /> */}
+      {/* <Lesson22 /> */}
+      {/* <Lesson24 /> */}
+      {/* <Lesson25 /> */}
+      {/* Consultations */}
+      {/* <Counsultation20 /> */}
+      {/* Homeworks */}
+      {/* <Homework20 /> */}
+      {/* <Homework21 /> */}
+      {/* <Homework22 /> */}
+      {/* <Homework23 /> */}
+      {/* <Homework24 /> */}
+      {/* <Homework24Alternative /> */}
+      {/* <Homework25 /> */}
+      {/* <Homework27 /> */}
+      {/* </Layout> */}
     </BrowserRouter>
   );
 }
