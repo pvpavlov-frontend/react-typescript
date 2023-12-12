@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 
-import {LikeIcon} from 'assets';
+import { LikeIcon } from 'assets';
 
 import {
   LayoutWrapper,
@@ -20,14 +20,14 @@ function Layout({ children }: LayoutProps) {
   const location = useLocation();
   const navigate = useNavigate();
 
-  console.log(location);
+  // console.log(location);
   return (
     <LayoutWrapper>
       <Header>
         <LogoContainer onClick={() => navigate("/")}>
           <LogoImg src={LikeIcon} />
           {/* Logo */}
-          </LogoContainer>
+        </LogoContainer>
         <NavContainer>
           <StyledNavLink
             style={({ isActive }) => ({ color: isActive ? "blue" : "white" })}

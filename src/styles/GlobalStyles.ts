@@ -10,7 +10,39 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: 'Inter', sans-serif;
 }
+
+:root {
+    --input: #fff;
+}
+
+*::-webkit-input-placeholder {
+    color: var(--input);
+    opacity: 1;
+}
+
+*:-moz-placeholder {
+    color: var(--input);
+    opacity: 1;
+}
+
+*::-moz-placeholder {
+    color: var(--input);
+    opacity: 1;
+}
+
+*:-ms-input-placeholder {
+    color: var(--input);
+    opacity: 1;
+}
+
+h1,
+p {
+    margin: 0;
+    padding: 0;
+}
+
 
 #root {
     height: 100%;
